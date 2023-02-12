@@ -33,7 +33,7 @@ const FilmDetailsPage = () => {
         setFilm(() => newFilm);
       })
       .catch(e => console.log(e.message));
-  }, []);
+  }, [id]);
 
   return (
     <>
