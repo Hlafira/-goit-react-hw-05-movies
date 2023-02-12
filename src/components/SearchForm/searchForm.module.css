@@ -1,0 +1,14 @@
+.input {
+  height: 30px;
+  font-size: 20px;
+  width: 500px;
+  border: 1px solid lightgrey;
+  padding-left: 1em;
+  box-sizing: border-box;
+}
+
+.button {
+  height: 30px;
+  font-size: 20px;
+  box-sizing: border-box;
+}

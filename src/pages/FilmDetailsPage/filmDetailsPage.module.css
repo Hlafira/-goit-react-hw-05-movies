@@ -1,0 +1,12 @@
+.additional {
+  padding: 10px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.28);
+}
+
+.linkBack {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding-right: 10px;
+  border: 1px solid lightgray;
+}

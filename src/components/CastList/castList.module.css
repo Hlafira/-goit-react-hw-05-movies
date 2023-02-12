@@ -1,0 +1,11 @@
+.list img {
+  top: 0;
+  position: absolute;
+  height: 192px;
+  display: block;
+}
+
+.list li {
+  padding-top: 192px;
+  position: relative;
+}
