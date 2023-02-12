@@ -26,7 +26,6 @@ export async function fetchPoPularMovies(page) {
         id,
         title: name ? name : title ? title : original_title,
       }));
-      return [];
     });
 }
 
