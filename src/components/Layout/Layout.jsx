@@ -9,7 +9,7 @@ const Layout = () => {
         <Navbar />
       </header>
       <main>
-        <Suspense fallback={<div>Loading page...</div>}>
+        <Suspense fallback={<p>"..loading "</p>}>
           <Outlet />
         </Suspense>
       </main>

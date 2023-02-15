@@ -34,31 +34,32 @@ const FilmDetailsPage = () => {
       })
       .catch(e => console.log(e.message));
   }, [id]);
-
+  const from = location.state ? location.state.from : '/';
   return (
     <>
-      <main>
-        <Link className={styles.linkBack} to={location.state.from}>
+     
+        <Link className={styles.linkBack} to={from}>
           &#8592;Go Back
         </Link>
+
         {film?.name && <MovieOverview film={film} />}
         <section className={styles.additional}>
           <p>Additional information</p>
           <ul>
             <li>
-              <Link to="cast" state={{ id: id, from: location.state.from }}>
+              <Link to="cast" state={{ from: from }}>
                 Cast
               </Link>
             </li>
             <li>
-              <Link to="reviews" state={{ id: id, from: location.state.from }}>
+              <Link to="reviews" state={{ id: id, from: from }}>
                 Reviews
               </Link>
             </li>
           </ul>
         </section>
         <Outlet />
-      </main>
+     
     </>
   );
 };

@@ -1,14 +1,11 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { fetchMovieReviews } from '../../shared/API/theMovieDb';
-import ReviewList from '../ReviewList/ReviewList';
+import ReviewList from '../../components/ReviewList/ReviewList';
 
-const Reviews = () => {
-  const location = useLocation();
-
-  const { id } = location.state;
-
+const ReviewsPage = () => {
+  const { id } = useParams();
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     fetchMovieReviews(id)
@@ -35,4 +32,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default ReviewsPage;

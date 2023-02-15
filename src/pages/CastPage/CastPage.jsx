@@ -1,12 +1,10 @@
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { imageSmallPath, fetchMovieCredits } from '../../shared/API/theMovieDb';
 import { useEffect, useState } from 'react';
 
-import CastList from '../CastList/CastList';
-const Cast = () => {
-  const location = useLocation();
-
-  const { id } = location.state;
+import CastList from '../../components/CastList/CastList';
+const CastPage = () => {
+  const { id } = useParams();
   const [actors, setActors] = useState([]);
   useEffect(() => {
     fetchMovieCredits(id)
@@ -30,10 +28,13 @@ const Cast = () => {
   }, [id]);
   return (
     <>
-      <h2>Cast </h2>
-      <CastList actors={actors} />
+      {actors.length > 0 ? (
+        <CastList actors={actors} />
+      ) : (
+        <p>We don't have any information about actors for this movie</p>
+      )}
     </>
   );
 };
 
-export default Cast;
+export default CastPage;
